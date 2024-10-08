@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    $couleur-general:#333;
+    $couleur-secondaire: #555;
+    $couleur-texte:white;
+    background-color: $couleur-general;
+    padding: 10px 0;
+
+    nav {
+        display: flex;
+        justify-content: center;
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+
+            li {
+                margin: 0 15px;
+
+                a {
+                    text-decoration: none;
+                    color: $couleur-texte;
+                    font-size: 18px;
+                    padding: 8px 16px;
+                    transition: background-color 0.3s ease;
+
+                    &:hover {
+                        background-color: #555;
+                        border-radius: 4px;
+                    }
+                }
+            }
+        }
+    }
+}
