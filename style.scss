@@ -31,14 +31,28 @@ header {
 
     nav {
         display: flex;
-        justify-content: center;
+        justify-content: space-between; /* Permet d'écarter le logo et le menu */
         align-items: center;
         max-width: 1200px;
         margin: 0 auto;
 
+        .logo {
+            margin-left: 20px; /* Ajuste l'espace autour du logo */
+
+            a {
+                display: inline-block;
+
+                img {
+                    max-height: 60px; /* Taille du logo */
+                    width: auto;
+                }
+            }
+        }
+
         ul {
             list-style: none;
             display: flex;
+            margin-right: 20px; /* Ajuste l'espace autour du menu */
 
             li {
                 margin: 0 20px;
@@ -80,6 +94,7 @@ header {
         }
     }
 }
+
 
 /* Responsive Navigation */
 @media (max-width: 768px) {
@@ -394,6 +409,7 @@ margin-top: 20px;
             color: $white;
             text-align: center;
             padding: 50px 20px;
+            padding-top: 80px;
 
             .hero-content {
                 max-width: 800px;
