@@ -21,33 +21,37 @@
         </nav>
     </header>
     
+
     
-    <main class="contact-container">
-        <h1>Contactez-nous</h1>
-        <form action="#" method="post" class="contact-form">
-            <div class="form-group">
-                <label for="prenom">Prénom</label>
-                <input type="text" id="prenom" name="prenom">
+        <main class="contact-container">
+            <div class="contact-form-wrapper">
+                <h1>Contactez-nous</h1>
+                <form action="#" method="post" class="contact-form">
+                    <div class="form-group">
+                        <label for="prenom">Prénom</label>
+                        <input type="text" id="prenom" name="prenom">
+                    </div>
+                    <div class="form-group">
+                        <label for="nom">Nom</label>
+                        <input type="text" id="nom" name="nom">
+                    </div>
+                    <div class="form-group">
+                        <label for="societe">Société</label>
+                        <input type="text" id="societe" name="societe">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5"></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Envoyer</button>
+                </form>
             </div>
-            <div class="form-group">
-                <label for="nom">Nom</label>
-                <input type="text" id="nom" name="nom">
-            </div>
-            <div class="form-group">
-                <label for="societe">Société</label>
-                <input type="text" id="societe" name="societe">
-            </div>
-            <div class="form-group">
-                <label for="email">Email <span class="required">*</span></label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5"></textarea>
-            </div>
-            <button type="submit" class="btn-submit">Envoyer</button>
-        </form>
-    </main>
+        </main>
+        
 
     <footer>
         <div class="footer-container">
@@ -64,7 +68,8 @@
             <div class="footer-legal">
                 <h3>Informations légales</h3>
                 <ul>
-                    <li><a href="terms.html">Conditions Générales</a></li>
+                    <li><a href="cgv.html">Conditions générales</a></li>
+                    <li><a href="legal.html">Mentions légales</a></li>
                     <li><a href="privacy.html">Politique de confidentialité</a></li>
                     <li><a href="shipping.html">Livraison & Retours</a></li>
                 </ul>
