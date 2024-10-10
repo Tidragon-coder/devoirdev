@@ -2,10 +2,34 @@
     margin: 0;
     padding: 0;
 }
+// @font-face {
+//     font-family: 'Retrovert';
+//     src: url('../typo/Retrovert.ttf') format('truetype'),
+//          url('../typo/Retrovert.otf') format('opentype');
+//     font-weight: normal;
+//     font-style: normal;
+// }
+
+// @font-face {
+//     font-family: 'Retrocket';
+//     src: url('../typo/Retrocket.ttf') format('truetype'),
+//          url('../typo/Retrocket.otf') format('opentype');
+//     font-weight: normal;
+//     font-style: normal;
+// }
+
+
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Retrocket', sans-serif; /* Police par défaut pour tout le corps du texte */
 }
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Retrovert', sans-serif; /* Police des titres */
+}
+
+
+
 $dark-blue: #09205A;
 $purple: #6D10A3;
 $light-blue: #5395B8;
@@ -13,6 +37,11 @@ $orange: #F4A338;
 $red: #D14022;
 $yellow: #FBD75F;
 $white: #ffffff;
+
+
+
+
+
 /* ---------------------------- Header Navigation Améliorée --------------------------- */
 header {
     background-color: $dark-blue;
@@ -23,6 +52,7 @@ header {
     width: 100%;
     z-index: 1000;
     transition: background-color 0.3s ease, padding 0.3s ease;
+    font-family: 'Retrovert', sans-serif;
 
     &:hover {
         background-color: darken($dark-blue, 10%);
@@ -824,15 +854,16 @@ footer {
 }
 
 
-$banner-bg-color: rgba(0, 0, 0, 0.8);
-$banner-text-color: white;
-$accept-bg-color: #4CAF50;
-$accept-bg-hover: #45a049;
-$decline-bg-color: #f44336;
-$decline-bg-hover: #d32f2f;
-$font-size: 16px;
+
 
 .cookie-banner {
+    $banner-bg-color: rgba(0, 0, 0, 0.8);
+    $banner-text-color: white;
+    $accept-bg-color: #4CAF50;
+    $accept-bg-hover: #45a049;
+    $decline-bg-color: #f44336;
+    $decline-bg-hover: #d32f2f;
+    $font-size: 16px;
   position: fixed;
   bottom: 20px;
   left: 50%;
@@ -856,6 +887,8 @@ $font-size: 16px;
     margin-bottom: 20px;
     font-size: $font-size;
     line-height: 1.5;
+    color: white;
+
   }
 
   .cookie-buttons {
@@ -932,22 +965,23 @@ $box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
         font-size: 36px;
         color: $primary-color;
         margin-bottom: 30px;
-        text-align: center;
-        font-family: 'Retroket.ttf';
+        text-align: center;  
+        font-family: 'Retrocket', sans-serif;
+        }
     }
 
     h2 {
         font-size: 24px;
         color: $secondary-color;
         margin-bottom: 15px;
-        font-family: 'Retroket.ttf';
+        font-family: 'Retroket', sans-serif;
     }
 
     p {
         font-size: 16px;
         color: #000000;
         margin-bottom: 20px;
-        font-family: 'Retrovert.otf';
+        font-family: 'Retrovert',sans-serif;
     }
 
     a {
@@ -958,7 +992,7 @@ $box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
             text-decoration: underline;
         }
     }
-}
+
 
 
 body {

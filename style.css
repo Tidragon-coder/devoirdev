@@ -5,7 +5,11 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Retrocket", sans-serif; /* Police par défaut pour tout le corps du texte */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Retrovert", sans-serif; /* Police des titres */
 }
 
 /* ---------------------------- Header Navigation Améliorée --------------------------- */
@@ -18,6 +22,7 @@ header {
   width: 100%;
   z-index: 1000;
   transition: background-color 0.3s ease, padding 0.3s ease;
+  font-family: "Retrovert", sans-serif;
 }
 header:hover {
   background-color: #04102c;
@@ -721,6 +726,7 @@ footer .footer-container .footer-copyright p {
   margin-bottom: 20px;
   font-size: 16px;
   line-height: 1.5;
+  color: white;
 }
 .cookie-banner .cookie-buttons {
   display: flex;
@@ -777,29 +783,28 @@ footer .footer-container .footer-copyright p {
   color: #09205A;
   margin-bottom: 30px;
   text-align: center;
-  font-family: "Retroket.ttf";
+  font-family: "Retrocket", sans-serif;
 }
-.cgv-container h2,
-.legal-container h2 {
+
+h2 {
   font-size: 24px;
   color: #6D10A3;
   margin-bottom: 15px;
-  font-family: "Retroket.ttf";
+  font-family: "Retroket", sans-serif;
 }
-.cgv-container p,
-.legal-container p {
+
+p {
   font-size: 16px;
   color: #000000;
   margin-bottom: 20px;
-  font-family: "Retrovert.otf";
+  font-family: "Retrovert", sans-serif;
 }
-.cgv-container a,
-.legal-container a {
+
+a {
   color: #5395B8;
   text-decoration: none;
 }
-.cgv-container a:hover,
-.legal-container a:hover {
+a:hover {
   text-decoration: underline;
 }
 
