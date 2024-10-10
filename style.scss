@@ -115,13 +115,38 @@ header {
 
 
 /* ---------------------------- A propos --------------------------- */
+/* Conteneur principal qui regroupe l'image et le texte */
 .about-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;  /* Alignement du texte et de l'image sur le haut */
+    margin: 30px auto;
+    max-width: 1100px;  /* Limite de largeur totale de la section */
+    gap: 20px;  /* Espace entre l'image et le bloc texte */
+}
+
+/* Image complètement à gauche */
+.about-image {
+    flex: 0 0 auto;
+    img {
+        max-width: 300px;  /* Ajuster la largeur maximale de l'image */
+        height: auto;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 140px;
+        margin-right: 55px;
+        margin-left: -65px;    
+    }
+}
+
+/* Bloc about */
+.about {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 50px;
-    background-color: $white;
+    background-image: url('media/fond retro 2 (2).jpg');
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     max-width: 900px;
@@ -152,33 +177,54 @@ header {
 
     /* Section - Presentation */
     .presentation {
-        background-color: lighten($purple, 40%);
+        background-color: $yellow;  // Fond de couleur
         border-radius: 12px;
         padding: 40px;
         margin-top: 30px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         width: 100%;
         text-align: center;  // Centrage du texte
+    
+        // Bordure orange avec effet néon
+        border: 4px solid $orange; // Bordure légèrement épaisse en orange
+        box-shadow: 0 0 15px $orange, 0 0 30px rgba(244, 163, 56, 0.5), 0 0 45px rgba(244, 163, 56, 0.3);  // Effet néon autour de la bordure
+    }
 
         h2 {
-            color: $purple;
+            color: $dark-blue;  // Couleur bleue claire pour le titre "Qui sommes-nous ?"
             font-size: 30px;
             margin-bottom: 20px;
             text-align: center;  // Centrage du texte
         }
 
-        p {
+        .p {
             font-size: 18px;
             color: $dark-blue;
             margin-bottom: 25px;
             line-height: 1.8;
             text-align: center;  // Centrage du texte
         }
+
     }
 
-    /* Responsive Design */
-    @media (max-width: 768px) {
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;  /* Empiler l'image et le texte sur mobile */
+        align-items: center;
+    }
+
+    .about-image {
+        margin-bottom: 20px;  /* Espace en bas de l'image sur mobile */
+        img {
+            max-width: 100%;  /* Assurez que l'image prenne toute la largeur disponible sur mobile */
+        }
+    }
+
+    .about {
         padding: 20px;
+        max-width: 100%;
 
         h1 {
             font-size: 32px;
@@ -197,6 +243,8 @@ header {
         }
     }
 }
+
+
 
 /* ---------------------------- Footer --------------------------- */
 .footer {
@@ -224,105 +272,25 @@ header {
     }
 }
 
+/* ---------------------------- Shop --------------------------- */
 .shop {
-
-    
-    
-    $bleu-fonce: #09205A;
-    $violet: #6D10A3;
-
-    margin-top: 20px;
-
-    
-    
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        background-color: #f9f9f9;
-    }
-    
-    .navbar {
-        background-color: $bleu-fonce;
-        color: white;
-        padding: 1rem;
-        text-align: center;
-    }
-    
-    .product-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        padding: 2rem;
-    
-        .product {
-            background-color: $yellow;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            margin: 1rem;
-            padding: 1rem;
-            width: calc(25% - 2rem);
-            text-align: center;
-            min-height: 450px; // Assure une hauteur minimale uniforme pour tous les conteneurs
-
-            img {
-                max-width: 100%;
-                max-height: 200px; // Fixe la taille maximale de l'image
-                object-fit: cover; // L'image s'ajuste sans déformation
-                border-radius: 8px;
-                margin-bottom: 1rem; // Espace sous l'image
-            }
-    
-              h2 {
-                margin-bottom: 0.5rem; // Espace sous le titre
-              }
-        
-              p {
-                margin-bottom: 0.5rem; // Espace sous la description et le prix
-              }
-        
-              button {
-                background-color: $violet;
-                color: white;
-                border: none;
-                padding: 0.5rem 1rem;
-                cursor: pointer;
-                margin-top: 1rem; // Espace au-dessus du bouton
-    
-                &:hover {
-                    background-color: darken($violet, 10%);
-                }
-            }
-        }
-    }
-    
-    .footer {
-        background-color: $bleu-fonce;
-        color: white;
-        text-align: center;
-        padding: 1rem;
-        position: relative;
-        bottom: 0;
-        width: 100%;
-    }
-}
-/* ---------------------------- Shop partie rajoutée --------------------------- */
-.shop {
-    padding-top: 100px; /* Espace au-dessus pour ne pas être caché par le header */
-    background-color: $light-blue; /* Fond bleu respectant la charte graphique */
+    padding-top: 120px;
+    background-color: $light-blue;
     text-align: center;
 
-    /* Titre de la section des produits */
+    /* Titre principal de la page et phrase introductive */
     h1 {
         font-size: 42px;
         color: $dark-blue;
         margin-bottom: 10px;
+        animation: fadeInDown 1s ease-out;
     }
 
-    /* Phrase introductive avant les produits */
     p.introduction {
         font-size: 20px;
         color: $purple;
         margin-bottom: 30px;
+        animation: fadeInUp 1s ease-out;
     }
 
     /* Conteneur des produits */
@@ -335,34 +303,81 @@ header {
         /* Style de chaque produit */
         .product {
             background-color: $white;
-            border: 2px solid $red; /* Encadrement fort en rouge */
+            border: 2px solid $dark-blue; /* Bordure avec un meilleur contraste */
             border-radius: 12px;
             margin: 1rem;
             padding: 1rem;
             width: calc(25% - 2rem);
             text-align: center;
             min-height: 450px;
+            box-shadow: 0 0 10px $orange; /* Ombre plus vive */
+            transition: transform 0.3s ease;
+            animation: fadeIn 1s ease-out;
 
-            /* Encadrement violet à l'intérieur du conteneur */
-            box-shadow: 0 0 10px $purple;
-            
+            &:hover {
+                transform: scale(1.05);
+            }
+
             img {
                 max-width: 100%;
                 max-height: 200px;
                 object-fit: cover;
                 border-radius: 8px;
                 margin-bottom: 1rem;
+                transition: transform 0.3s ease;
+
+                &:hover {
+                    transform: rotate(5deg) scale(1.05);
+                }
             }
 
             h2 {
                 margin-bottom: 0.5rem;
-                color: $dark-blue;
+                color: white; 
+                background-color: $purple; /* Fond clair par défaut */
+                padding: 0.5rem;
+                border-bottom: 2px solid $purple;
+                transition: background-color 0.3s ease, color 0.3s ease;
+            
+                &:hover {
+                    color: $white; /* Inverser les couleurs : texte devient bleu foncé */
+                    background-color: lighten($purple, 40%); /* Fond devient la couleur violette de base */
+                }
             }
-
-            p {
-                margin-bottom: 0.5rem;
-                color: $dark-blue;
+            
+            .product-description {
+                margin: 1rem 0;
+                padding: 1rem;
+                border: 1px solid $light-blue; /* Bordure en bleu clair pour rester dans la charte */
+                border-radius: 8px;
+                background-color: lighten($light-blue, 20%); /* Fond bleu clair atténué pour un meilleur contraste */
+                transition: background-color 0.3s ease, box-shadow 0.3s ease;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            
+                &:hover {
+                    background-color: $light-blue; /* Couleur de fond plus marquée au survol */
+                    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+                }
+            
+                p {
+                    margin-bottom: 0.5rem;
+                    color: $dark-blue; /* Texte avec une couleur plus foncée pour le contraste */
+                }
+            
+                .price {
+                    font-weight: bold;
+                    color: $purple; /* Couleur du prix alignée avec la charte graphique */
+                    border-top: 2px solid $dark-blue; /* Bordure supérieure pour séparer la section prix */
+                    margin-top: 1rem;
+                    padding-top: 0.5rem;
+                    transition: color 0.3s ease;
+            
+                    &:hover {
+                        color: $orange; /* Changement de couleur au survol pour attirer l'attention */
+                    }
+                }
             }
+            
 
             button {
                 background-color: $purple;
@@ -371,15 +386,50 @@ header {
                 padding: 0.5rem 1rem;
                 cursor: pointer;
                 margin-top: 1rem;
+                transition: background-color 0.3s ease, transform 0.3s ease;
 
                 &:hover {
                     background-color: darken($purple, 10%);
+                    transform: translateY(-5px);
                 }
             }
         }
     }
-}
 
+    /* Animations */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
 
 /*--------------------------------INDEX ------------------------------------------------*/
 
@@ -405,11 +455,15 @@ margin-top: 20px;
     main {
         // Hero Section
         .hero {
-            background-color: $purple;
             color: $white;
             text-align: center;
             padding: 50px 20px;
-            padding-top: 80px;
+            padding-top: 180px;
+            background-image: url('media/image header retro.jpg');
+            background-size: cover; // L'image couvre toute la zone du bandeau
+            background-position: center; // Centre l'image
+            background-repeat: no-repeat; // Empêche la répétition de l'image
+            
 
             .hero-content {
                 max-width: 800px;
@@ -502,7 +556,7 @@ margin-top: 20px;
                     text-align: center;
 
                     img {
-                        max-width: 100%;
+                        max-width: 70%;
                         border-radius: 8px;
                         margin-bottom: 15px;
                     }
@@ -527,6 +581,58 @@ margin-top: 20px;
                 }
             }
         }
+        /* Nouvelle section galerie */
+.gallery-section {
+    text-align: center;
+    margin: 50px 0;
+
+    h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+        color: $dark-blue;
+        margin-bottom: 45px;
+    }
+
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 4 images par ligne */
+        gap: 20px; /* Espace entre les images */
+        max-width: 1200px;
+        margin: 0 auto;
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: scale(1.05); /* Zoom léger au hover */
+            }
+        }
+    }
+
+    /* Responsive Design pour écrans plus petits */
+    @media (max-width: 1024px) {
+        .gallery-grid {
+            grid-template-columns: repeat(3, 1fr); /* 3 images par ligne sur les tablettes */
+        }
+    }
+
+    @media (max-width: 768px) {
+        .gallery-grid {
+            grid-template-columns: repeat(2, 1fr); /* 2 images par ligne sur les téléphones */
+        }
+    }
+
+    @media (max-width: 480px) {
+        .gallery-grid {
+            grid-template-columns: 1fr; /* 1 image par ligne sur les petits écrans */
+        }
+    }
+}
+
     }
     
     .footer {
@@ -541,6 +647,7 @@ margin-top: 20px;
         }
     }
 }
+
 
 
    
@@ -565,7 +672,7 @@ margin-top: 20px;
     padding: 20px;
     max-width: 800px;
     margin: 0 auto;
-    margin-top: 40px;
+    margin-top: 80px;
     text-align: center;
 
     h1 {
@@ -624,6 +731,7 @@ margin-top: 20px;
         }
     }
 }
+
 
 /*-----------------------------------footer ----------------------------*/
 footer {
@@ -689,5 +797,7 @@ footer {
         }
     }
 }
+
+
 
  

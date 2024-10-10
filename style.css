@@ -93,13 +93,38 @@ header nav ul li:hover::before {
   }
 }
 /* ---------------------------- A propos --------------------------- */
+/* Conteneur principal qui regroupe l'image et le texte */
 .about-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Alignement du texte et de l'image sur le haut */
+  margin: 30px auto;
+  max-width: 1100px; /* Limite de largeur totale de la section */
+  gap: 20px; /* Espace entre l'image et le bloc texte */
+}
+
+/* Image complètement à gauche */
+.about-image {
+  flex: 0 0 auto;
+}
+.about-image img {
+  max-width: 300px; /* Ajuster la largeur maximale de l'image */
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 140px;
+  margin-right: 55px;
+  margin-left: -65px;
+}
+
+/* Bloc about */
+.about {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 50px;
-  background-color: #ffffff;
+  background-image: url("media/fond retro 2 (2).jpg");
   border-radius: 15px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   max-width: 900px;
@@ -107,9 +132,8 @@ header nav ul li:hover::before {
   text-align: center;
   /* Main Title */
   /* Section - Presentation */
-  /* Responsive Design */
 }
-.about-container h1 {
+.about h1 {
   font-size: 40px;
   margin-bottom: 30px;
   color: #09205A;
@@ -117,7 +141,7 @@ header nav ul li:hover::before {
   text-align: center;
   /* Souligner le titre */
 }
-.about-container h1::after {
+.about h1::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -128,46 +152,60 @@ header nav ul li:hover::before {
   background-color: #6D10A3;
   border-radius: 2px;
 }
-.about-container .presentation {
-  background-color: #cd8bf4;
+.about .presentation {
+  background-color: #FBD75F;
   border-radius: 12px;
   padding: 40px;
   margin-top: 30px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
   text-align: center;
+  border: 4px solid #F4A338;
+  box-shadow: 0 0 15px #F4A338, 0 0 30px rgba(244, 163, 56, 0.5), 0 0 45px rgba(244, 163, 56, 0.3);
 }
-.about-container .presentation h2 {
-  color: #6D10A3;
+.about h2 {
+  color: #09205A;
   font-size: 30px;
   margin-bottom: 20px;
   text-align: center;
 }
-.about-container .presentation p {
+.about .p {
   font-size: 18px;
   color: #09205A;
   margin-bottom: 25px;
   line-height: 1.8;
   text-align: center;
 }
+
+/* Responsive Design */
 @media (max-width: 768px) {
   .about-container {
-    padding: 20px;
+    flex-direction: column; /* Empiler l'image et le texte sur mobile */
+    align-items: center;
   }
-  .about-container h1 {
+  .about-image {
+    margin-bottom: 20px; /* Espace en bas de l'image sur mobile */
+  }
+  .about-image img {
+    max-width: 100%; /* Assurez que l'image prenne toute la largeur disponible sur mobile */
+  }
+  .about {
+    padding: 20px;
+    max-width: 100%;
+  }
+  .about h1 {
     font-size: 32px;
   }
-  .about-container .presentation {
+  .about .presentation {
     padding: 20px;
   }
-  .about-container .presentation h2 {
+  .about .presentation h2 {
     font-size: 24px;
   }
-  .about-container .presentation p {
+  .about .presentation p {
     font-size: 16px;
   }
 }
-
 /* ---------------------------- Footer --------------------------- */
 .footer {
   background-color: #09205A;
@@ -191,89 +229,26 @@ header nav ul li:hover::before {
   text-decoration: underline;
 }
 
+/* ---------------------------- Shop --------------------------- */
 .shop {
-  margin-top: 20px;
-}
-.shop body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background-color: #f9f9f9;
-}
-.shop .navbar {
-  background-color: #09205A;
-  color: white;
-  padding: 1rem;
+  padding-top: 120px;
+  background-color: #5395B8;
   text-align: center;
-}
-.shop .product-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 2rem;
-}
-.shop .product-container .product {
-  background-color: #FBD75F;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  margin: 1rem;
-  padding: 1rem;
-  width: calc(25% - 2rem);
-  text-align: center;
-  min-height: 450px;
-}
-.shop .product-container .product img {
-  max-width: 100%;
-  max-height: 200px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-}
-.shop .product-container .product h2 {
-  margin-bottom: 0.5rem;
-}
-.shop .product-container .product p {
-  margin-bottom: 0.5rem;
-}
-.shop .product-container .product button {
-  background-color: #6D10A3;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  margin-top: 1rem;
-}
-.shop .product-container .product button:hover {
-  background-color: #4e0b75;
-}
-.shop .footer {
-  background-color: #09205A;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  position: relative;
-  bottom: 0;
-  width: 100%;
-}
-
-/* ---------------------------- Shop partie rajoutée --------------------------- */
-.shop {
-  padding-top: 100px; /* Espace au-dessus pour ne pas être caché par le header */
-  background-color: #5395B8; /* Fond bleu respectant la charte graphique */
-  text-align: center;
-  /* Titre de la section des produits */
-  /* Phrase introductive avant les produits */
+  /* Titre principal de la page et phrase introductive */
   /* Conteneur des produits */
+  /* Animations */
 }
 .shop h1 {
   font-size: 42px;
   color: #09205A;
   margin-bottom: 10px;
+  animation: fadeInDown 1s ease-out;
 }
 .shop p.introduction {
   font-size: 20px;
   color: #6D10A3;
   margin-bottom: 30px;
+  animation: fadeInUp 1s ease-out;
 }
 .shop .product-container {
   display: flex;
@@ -284,15 +259,19 @@ header nav ul li:hover::before {
 }
 .shop .product-container .product {
   background-color: #ffffff;
-  border: 2px solid #D14022; /* Encadrement fort en rouge */
+  border: 2px solid #09205A; /* Bordure avec un meilleur contraste */
   border-radius: 12px;
   margin: 1rem;
   padding: 1rem;
   width: calc(25% - 2rem);
   text-align: center;
   min-height: 450px;
-  /* Encadrement violet à l'intérieur du conteneur */
-  box-shadow: 0 0 10px #6D10A3;
+  box-shadow: 0 0 10px #F4A338; /* Ombre plus vive */
+  transition: transform 0.3s ease;
+  animation: fadeIn 1s ease-out;
+}
+.shop .product-container .product:hover {
+  transform: scale(1.05);
 }
 .shop .product-container .product img {
   max-width: 100%;
@@ -301,14 +280,50 @@ header nav ul li:hover::before {
      object-fit: cover;
   border-radius: 8px;
   margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+.shop .product-container .product img:hover {
+  transform: rotate(5deg) scale(1.05);
 }
 .shop .product-container .product h2 {
   margin-bottom: 0.5rem;
-  color: #09205A;
+  color: white;
+  background-color: #6D10A3; /* Fond clair par défaut */
+  padding: 0.5rem;
+  border-bottom: 2px solid #6D10A3;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
-.shop .product-container .product p {
+.shop .product-container .product h2:hover {
+  color: #ffffff; /* Inverser les couleurs : texte devient bleu foncé */
+  background-color: #cd8bf4; /* Fond devient la couleur violette de base */
+}
+.shop .product-container .product .product-description {
+  margin: 1rem 0;
+  padding: 1rem;
+  border: 1px solid #5395B8; /* Bordure en bleu clair pour rester dans la charte */
+  border-radius: 8px;
+  background-color: #9bc1d6; /* Fond bleu clair atténué pour un meilleur contraste */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.shop .product-container .product .product-description:hover {
+  background-color: #5395B8; /* Couleur de fond plus marquée au survol */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+.shop .product-container .product .product-description p {
   margin-bottom: 0.5rem;
-  color: #09205A;
+  color: #09205A; /* Texte avec une couleur plus foncée pour le contraste */
+}
+.shop .product-container .product .product-description .price {
+  font-weight: bold;
+  color: #6D10A3; /* Couleur du prix alignée avec la charte graphique */
+  border-top: 2px solid #09205A; /* Bordure supérieure pour séparer la section prix */
+  margin-top: 1rem;
+  padding-top: 0.5rem;
+  transition: color 0.3s ease;
+}
+.shop .product-container .product .product-description .price:hover {
+  color: #F4A338; /* Changement de couleur au survol pour attirer l'attention */
 }
 .shop .product-container .product button {
   background-color: #6D10A3;
@@ -317,9 +332,41 @@ header nav ul li:hover::before {
   padding: 0.5rem 1rem;
   cursor: pointer;
   margin-top: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 .shop .product-container .product button:hover {
   background-color: #4e0b75;
+  transform: translateY(-5px);
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /*--------------------------------INDEX ------------------------------------------------*/
@@ -331,12 +378,18 @@ header nav ul li:hover::before {
   margin: 0;
   padding: 0;
 }
+.index main {
+  /* Nouvelle section galerie */
+}
 .index main .hero {
-  background-color: #6D10A3;
   color: #ffffff;
   text-align: center;
   padding: 50px 20px;
-  padding-top: 80px;
+  padding-top: 180px;
+  background-image: url("media/image header retro.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .index main .hero .hero-content {
   max-width: 800px;
@@ -415,7 +468,7 @@ header nav ul li:hover::before {
   text-align: center;
 }
 .index main .new-products .products-list .product-item img {
-  max-width: 100%;
+  max-width: 70%;
   border-radius: 8px;
   margin-bottom: 15px;
 }
@@ -434,6 +487,49 @@ header nav ul li:hover::before {
 .index main .new-products .products-list .product-item .btn-primary:hover {
   background-color: #5395B8;
 }
+.index main .gallery-section {
+  text-align: center;
+  margin: 50px 0;
+  /* Responsive Design pour écrans plus petits */
+}
+.index main .gallery-section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #09205A;
+  margin-bottom: 45px;
+}
+.index main .gallery-section .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 images par ligne */
+  gap: 20px; /* Espace entre les images */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.index main .gallery-section .gallery-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+.index main .gallery-section .gallery-grid img:hover {
+  transform: scale(1.05); /* Zoom léger au hover */
+}
+@media (max-width: 1024px) {
+  .index main .gallery-section .gallery-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 images par ligne sur les tablettes */
+  }
+}
+@media (max-width: 768px) {
+  .index main .gallery-section .gallery-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 images par ligne sur les téléphones */
+  }
+}
+@media (max-width: 480px) {
+  .index main .gallery-section .gallery-grid {
+    grid-template-columns: 1fr; /* 1 image par ligne sur les petits écrans */
+  }
+}
 .index .footer {
   margin-top: 20px;
   background-color: #09205A;
@@ -450,7 +546,7 @@ header nav ul li:hover::before {
   padding: 20px;
   max-width: 800px;
   margin: 0 auto;
-  margin-top: 40px;
+  margin-top: 80px;
   text-align: center;
 }
 .contact-container h1 {
